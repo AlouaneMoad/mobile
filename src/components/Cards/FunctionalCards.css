@@ -1,0 +1,417 @@
+.functional-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.functional-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary);
+}
+
+/* Weight Record Card */
+.weight-record-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weight-record-card .card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.weight-record-card .card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+.weight-record-card .card-content {
+  flex: 1;
+}
+
+.weight-record-card .card-title {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.weight-record-card .weight-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.weight-record-card .card-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.weight-record-card .card-trend {
+  text-align: right;
+}
+
+.trend-indicator {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.trend-indicator.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+/* Diet Plan Card with Flip Animation */
+.diet-plan-card {
+  perspective: 1000px;
+  height: 200px;
+}
+
+.diet-plan-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.diet-plan-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.diet-plan-card .card-front,
+.diet-plan-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.diet-plan-card .card-front {
+  padding: 20px;
+  text-align: center;
+}
+
+.diet-plan-card .diet-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.diet-plan-card .diet-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+}
+
+.diet-plan-card .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.diet-plan-card .card-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.diet-plan-card .flip-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.diet-plan-card .card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.diet-plan-card .card-back .card-title {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.macro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.macro-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.macro-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.macro-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Exercise Card */
+.exercise-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.exercise-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.exercise-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exercise-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--primary);
+}
+
+.exercise-card .exercise-info {
+  flex: 1;
+}
+
+.exercise-card .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.exercise-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.duration {
+  color: var(--text-secondary);
+}
+
+.intensity {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.intensity.high {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+.intensity.medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.intensity.low {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.exercise-progress {
+  height: 4px;
+  background: var(--background);
+}
+
+.exercise-progress .progress-bar {
+  height: 100%;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+/* Stat Card */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-title {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-unit {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+.stat-trend {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Add Record Card */
+.add-record-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  border: 2px dashed var(--border);
+  background: transparent;
+}
+
+.add-record-card:hover {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.plus-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.add-record-card:hover .plus-icon {
+  transform: scale(1.1);
+}
+
+.plus-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+.add-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Responsive Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.cards-grid.tight {
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .functional-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .weight-record-card .weight-value {
+    font-size: 20px;
+  }
+
+  .stat-card .stat-value {
+    font-size: 24px;
+  }
+
+  .diet-plan-card {
+    height: 180px;
+  }
+}
