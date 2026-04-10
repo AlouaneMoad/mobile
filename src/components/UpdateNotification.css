@@ -1,0 +1,97 @@
+.update-notification {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  background: var(--success);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
+  z-index: 9999;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.update-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.update-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.update-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+.update-text {
+  flex: 1;
+}
+
+.update-text h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.update-text p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.update-btn {
+  padding: 10px 20px;
+  background: white;
+  color: var(--success);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.update-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .update-notification {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .update-text {
+    display: none;
+  }
+
+  .update-content {
+    justify-content: center;
+  }
+}
